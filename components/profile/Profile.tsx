@@ -38,7 +38,7 @@ const Profile = () => {
           </p>
         </div>
         <div className="mt-3">
-          <button className="px-4 py-1 font-semibold border border-gray-300 rounded-3xl">
+          <button className="px-4 py-1 font-semibold border border-gray-300 rounded-3xl hover:bg-neutral-200">
             Edit profile
           </button>
         </div>
