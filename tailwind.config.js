@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         twitter: "#00ADED",
       },
+      width: {
+        152: "38rem",
+      },
     },
   },
   plugins: [],
