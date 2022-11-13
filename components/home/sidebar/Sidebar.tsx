@@ -1,14 +1,7 @@
-import React from "react";
-// import {
-//   BellIcon,
-//   HashtagIcon,
-//   BookmarkIcon,
-//   UserIcon,
-//   EnvelopeIcon,
-//   EllipsisHorizontalCircleIcon,
-//   QueueListIcon,
-//   HomeIcon,
-// } from "@heroicons/react/24/outline";
+import React, { useState } from "react";
+import SidebarRow from "./SidebarRow";
+
+import TwitterIcon from "@mui/icons-material/Twitter";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import HomeIcon from "@mui/icons-material/Home";
 import TagOutlinedIcon from "@mui/icons-material/TagOutlined";
@@ -40,32 +33,24 @@ const icons = [
   { Icon: PendingOutlinedIcon, ActiveIcon: PendingOutlinedIcon, title: "More" },
 ];
 
-import SidebarRow from "./SidebarRow";
-
 const Sidebar = () => {
+  const [activePage, setActivePage] = useState<number>(0);
+
+  const clickHandler = (index: number) => setActivePage(index);
+
   return (
     <div className="flex flex-col items-center col-span-2 px-4 md:items-start">
-      <img
-        className="w-10 h-10 m-3"
-        src="https://links.papareact.com/drq"
-        alt="twitter"
-      />
+      <TwitterIcon className="m-3 text-4xl text-twitter" />
       {icons.map((icon, i) => (
         <SidebarRow
           key={i}
-          Icon={icon.Icon}
-          ActiveIcon={icon.ActiveIcon}
+          Icon={i === activePage ? icon.ActiveIcon : icon.Icon}
           title={icon.title}
+          index={i}
+          isActive={i === activePage}
+          onClick={clickHandler}
         />
       ))}
-      {/* <SidebarRow Icon={HomeIcon} title="Home" />
-      <SidebarRow Icon={HashtagIcon} title="Explore" />
-      <SidebarRow Icon={BellIcon} title="Notifications" />
-      <SidebarRow Icon={EnvelopeIcon} title="Messages" />
-      <SidebarRow Icon={BookmarkIcon} title="Bookmarks" />
-      <SidebarRow Icon={QueueListIcon} title="Lists" />
-      <SidebarRow Icon={UserIcon} title="Profile" />
-      <SidebarRow Icon={EllipsisHorizontalCircleIcon} title="More" /> */}
     </div>
   );
 };
