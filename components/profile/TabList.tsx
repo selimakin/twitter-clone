@@ -13,7 +13,7 @@ interface Props {
 
 const TabList = ({ tabs, activeTab, onClick }: Props) => {
   return (
-    <>
+    <div className="grid grid-cols-5 mt-5 justify-items-stretch">
       {tabs.map((tab, i) => (
         <div
           onClick={() => onClick(i)}
@@ -29,7 +29,7 @@ const TabList = ({ tabs, activeTab, onClick }: Props) => {
           </span>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
