@@ -18,7 +18,7 @@ const TabList = ({ tabs, activeTab, onClick }: Props) => {
         <div
           onClick={() => onClick(i)}
           key={i}
-          className={`col-span-${tab.span} pt-3 hover:bg-gray-300 flex justify-center`}
+          className={`col-span-${tab.span} pt-3 hover:bg-gray-300 hover:cursor-pointer flex justify-center`}
         >
           <span
             className={`pb-4 text-center border-b-4 border-transparent ${
