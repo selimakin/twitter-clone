@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Comment, Tweet } from "../../../typings";
 import TimeAgo from "react-timeago";
-import { ChatBubbleLeftIcon } from "@heroicons/react/24/outline";
-import { ArrowPathRoundedSquareIcon } from "@heroicons/react/24/outline";
-import { HeartIcon } from "@heroicons/react/24/outline";
-import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import RepeatOutlinedIcon from "@mui/icons-material/RepeatOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import { fethComments } from "../../../utils/fetchComments";
 
 interface Props {
@@ -56,18 +56,18 @@ const Post = ({ tweet }: Props) => {
       </div>
       <div className="flex justify-between mt-5">
         <div className="flex items-center space-x-3 text-gray-400 cursor-pointer">
-          <ChatBubbleLeftIcon className="w-5 h-5" />
+          <ChatBubbleOutlineOutlinedIcon className="w-5 h-5" />
           <p>{comments.length}</p>
         </div>
         <div className="flex items-center space-x-3 text-gray-400 cursor-pointer">
-          <ArrowPathRoundedSquareIcon className="w-5 h-5" />
+          <RepeatOutlinedIcon className="w-5 h-5" />
         </div>
         <div className="flex items-center space-x-3 text-gray-400 cursor-pointer">
-          <HeartIcon className="w-5 h-5" />
+          <FavoriteBorderOutlinedIcon className="w-5 h-5" />
         </div>
 
         <div className="flex items-center space-x-3 text-gray-400 cursor-pointer">
-          <ArrowUpTrayIcon className="w-5 h-5" />
+          <FileUploadOutlinedIcon className="w-5 h-5" />
         </div>
       </div>
 
