@@ -31,7 +31,8 @@ export interface ITweetQuerySuccessResponse {
 
 export interface ICreateTweetPayload {
   description: string;
-  imgUrl?: string;
+  imgUrl: string;
+  imageId: string;
 }
 
 export interface ICreateTweetSuccessResponse {
